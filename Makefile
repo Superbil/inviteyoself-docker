@@ -13,5 +13,4 @@ clean-db:
 	docker stop postgres
 	docker rm postgres
 
-clean:
-	clean-db
+clean:	clean-db
