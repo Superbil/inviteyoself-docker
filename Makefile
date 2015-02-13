@@ -13,4 +13,8 @@ clean-db:
 	docker stop postgres
 	docker rm postgres
 
+clean-web:
+	docker stop inviteyoself
+	docker rm inviteyoself
+
 clean:	clean-db
