@@ -5,7 +5,7 @@ build:
 db:
 	docker run --name postgres -d --env-file ./db-env.list postgres
 
-init-db:
+web:
 	docker run --name inviteyoself --link postgres:pgdb -it -d --env-file ./slack-env.list inviteyoself
 
 clean-db:
@@ -16,4 +16,4 @@ clean-web:
 	docker stop inviteyoself
 	docker rm inviteyoself
 
-clean:	clean-db
+clean:	clean-db clean-web
