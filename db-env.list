@@ -1,5 +1,2 @@
-DB_NAME=db
-DB_USER_NAME=postgres
-DB_USER_PASSWORD=db_password
-
-POSTGRES_PASSWORD=db_password
+POSTGRES_USER=inviteyoself
+POSTGRES_PASSWORD=inviteyoself_password
