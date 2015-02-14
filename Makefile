@@ -7,7 +7,6 @@ db:
 
 init-db:
 	docker run --name inviteyoself --link postgres:pgdb -it -d --env-file ./slack-env.list inviteyoself
-	# 'lein ragtime migrate -d "jdbc:postgresql://pgdb:5432/$PGDB_ENV_DB_NAME?password=$PGDB_ENV_DB_USER_PASSWORD"'
 
 clean-db:
 	docker stop postgres
