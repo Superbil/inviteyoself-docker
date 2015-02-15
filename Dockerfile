@@ -2,12 +2,12 @@ FROM clojure
 
 MAINTAINER Superbil "superbil@gmail.com"
 
-RUN git clone --depth=1 https://github.com/Superbil/inviteyoself.git inviteyoself
+RUN git clone --depth=1 https://github.com/Superbil/inviteyoself.git
 WORKDIR inviteyoself
 
-COPY docker-entrypoint.sh /
+RUN mkdir -p /docker-entrypoint-initdb.d/
+COPY db-entrypoint.sh /docker-entrypoint-initdb.d/
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 3000
-CMD ["lein", "ring server-headless"]
+CMD ["lein", "start-production-server"]
