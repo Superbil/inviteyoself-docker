@@ -1,3 +1,3 @@
 #!/bin/sh
 
-psql -f inviteyoself/migrations/201409002828-add-invites-table.up.sql
+gosu postgres postgres --single -jE $POSTGRES_USER < /docker-entrypoint-initdb.d/add-invites-table.up.sql
