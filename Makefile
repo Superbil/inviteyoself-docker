@@ -1,6 +1,6 @@
 
 build:
-	docker build --force-rm=true -t superbil/inviteyoself .
+	docker build -t superbil/inviteyoself .
 
 db:
 	docker run --name postgres -d --env-file ./db-env.list postgres
