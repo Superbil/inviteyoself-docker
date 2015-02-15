@@ -1,6 +1,6 @@
 
 build:
-	docker build --force-rm -t inviteyoself .
+	docker build --force-rm=true -t inviteyoself .
 
 db:
 	docker run --name postgres -d --env-file ./db-env.list postgres
