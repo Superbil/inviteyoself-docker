@@ -10,4 +10,4 @@ export DB_NAME=$PGDB_ENV_POSTGRES_USER
 export DB_USER_NAME=$PGDB_ENV_POSTGRES_USER
 export DB_USER_PASSWORD=$PGDB_ENV_POSTGRES_PASSWORD
 
-lein start-production-server
+java -jar /inviteyoself/target/inviteyoself-0.1.0-SNAPSHOT-standalone.jar
