@@ -6,7 +6,7 @@ db:
 	docker run --name postgres -d --env-file ./db-env.list postgres
 
 web:
-	docker run --name invite --link postgres:pgdb -it -d --env-file ./slack-env.list invite
+	docker run --name invite --link postgres:pgdb -it -d --env-file ./slack-env.list superbil/inviteyoself
 
 clean-db:
 	docker stop postgres
