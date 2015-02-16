@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# This requires a linked redis Docker container:
-#    docker run --name postgres -d --env-file ./db-env.list postgres
+# This requires a linked postgres Docker container:
+#    docker run --name postgres -v /db-volume:/docker-entrypoint-initdb.d -d --env-file ./db-env.list postgres
 #    docker run --name invite --link postgres:pgdb -d --env-file ./slack-env.list invite
 
 export DB_HOST=$PGDB_PORT_5432_TCP_ADDR
