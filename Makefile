@@ -6,7 +6,10 @@ db:
 	docker run --name postgres -d -v $$(pwd)/db-volume:/docker-entrypoint-initdb.d --env-file ./db-env.list postgres
 
 web:
-	docker run --name invite --link postgres:pgdb -it -d --env-file ./slack-env.list superbil/inviteyoself
+	docker run --name invite --link postgres:pgdb -it -d -p 3000:3000 --env-file ./slack-env.list superbil/inviteyoself
+
+open-web:
+	open http://$$(boot2docker ip):3000/
 
 clean-db:
 	docker stop postgres
